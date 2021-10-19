@@ -1,0 +1,46 @@
+.tab {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+}
+
+.tab > li.active {
+    border-bottom: 2px solid var(--yellow);
+    padding: 0 3px 5px;
+    color: var(--yellow);   
+}
+
+.tab > li:not(:last-child) {
+    margin-right: 15px;
+}
+.button{
+    font-size: .9rem;
+    padding: 0.3em 0.5em;
+    border-radius: 3px;
+    background-color: var(--laght-gray);
+    border: none;
+}
+.button:not(:last-child) {
+    margin-right: 1em;
+}
+
+.okButton {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.okButton:hover,
+.okButton:active {
+    background-color: var(--yellow);
+    color: var(--white);
+}
+.closeButton {
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
+.closeButton:hover, 
+.closeButton:active {
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+}

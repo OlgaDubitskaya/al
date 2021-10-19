@@ -1,0 +1,46 @@
+.form > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.form > div:not(:last-child) {
+    margin-bottom: 10px;
+}
+input[type=text] {
+    padding: 5px;
+    border-radius: 3px;
+    width: 70%;
+    border: 1px solid var(--black);
+    outline:none;
+}
+input[type=text]:hover,
+input[type=text]:focus {
+    border: 1px solid var(--green);
+    box-shadow: 0 0 1px 1px var(--green);
+}
+
+.upload {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid var(--black);
+}
+.upload:hover,
+.upload:active {
+    color: var(--green);
+    border: 1px solid var(--green);
+    box-shadow: 0 0 1px 1px var(--green);
+}
+@media(max-width: 500px) {
+    input[type=text] {
+        width: 50%;  
+    }
+}
+@media(max-width: 350px) {
+    input[type=text] {
+        width: 100%;  
+    }
+}
+.title {
+    font-size: 1.1rem;
+    margin-bottom: 0.9em;
+}
