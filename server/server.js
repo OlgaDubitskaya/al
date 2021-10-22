@@ -41,7 +41,7 @@ const credentials = {
   cert: fs.readFileSync(process.env.SSL_CRT_PATH).toString(),
   key: fs.readFileSync(process.env.SSL_KEY_PATH).toString()
 }
-https.createServer(credentials, app).listen(443, "localhost", () => console.log(`Listening on https`))
+https.createServer(credentials, app).listen(443)
 
 http.createServer((req, res) => {
   res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url })
