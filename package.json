@@ -2,7 +2,7 @@
   "name": "autolidernodejs",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:5000",
+  "proxy": "https://localhost",
   "dependencies": {
     "@ant-design/icons": "^4.6.4",
     "@testing-library/jest-dom": "^5.11.4",

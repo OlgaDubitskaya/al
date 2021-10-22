@@ -13,8 +13,6 @@ dotenv.config({ path: ".env" })
 
 const { DB_URI } = process.env
 
-const port = 5000
-
 mongoose
   .connect(DB_URI)
   .then(
@@ -43,6 +41,9 @@ const credentials = {
   cert: fs.readFileSync(process.env.SSL_CRT_PATH).toString(),
   key: fs.readFileSync(process.env.SSL_KEY_PATH).toString()
 }
-// const server = http.createServer(app)
-const server = https.createServer(credentials, app)
-server.listen(port, "localhost", () => console.log(`Listening on port ${port} https`))
+https.createServer(credentials, app).listen(443, "localhost", () => console.log(`Listening on https`))
+
+http.createServer((req, res) => {
+  res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url })
+  res.end()
+}).listen(80)
