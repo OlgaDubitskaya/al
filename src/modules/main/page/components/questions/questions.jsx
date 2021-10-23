@@ -57,6 +57,7 @@ export const Questions = () => {
                             item={i}
                             setVisible={setAnswerVisible}
                             visible={answerVisible}
+                            key={i.id}
                         />
                     ))}
                 </div>

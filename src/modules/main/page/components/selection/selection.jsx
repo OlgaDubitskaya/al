@@ -79,6 +79,7 @@ export const Selection = () => {
                             item={i}
                             setVisible={setSubtitleVisible}
                             visible={subtitleVisible}
+                            key={i.id}
                         />
                     ))}
                 </div>

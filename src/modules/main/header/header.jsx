@@ -56,7 +56,7 @@ export const Header = () => {
                 <div className={styles.block}>
                     {
                         phones.map(i => (
-                            <InputPhone item={i} />
+                            <InputPhone item={i} key={i.img.alt} />
                         ))
                     }
                 </div>

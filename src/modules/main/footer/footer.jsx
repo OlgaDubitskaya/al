@@ -11,13 +11,13 @@ export const Footer = () => {
                 <div className={styles.block}>
                     {
                         phones.map(i => (
-                            <InputPhone item={i} />
+                            <InputPhone item={i} key={i.img.alt} />
                         ))
                     }
                 </div>
                 <div className={styles.block}>
                     {socials.map(i => (
-                        <a href={i.href}>
+                        <a href={i.href} key={i.img.alt}>
                             <ImageLink img={i.img} />
                         </a>
                     ))}
