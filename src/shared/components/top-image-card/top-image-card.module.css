@@ -1,8 +1,6 @@
-.body {
-    padding: 2.2em;
+.card_body {
     font-size: 1rem;
-    box-shadow: 0 0.9em 1.1em rgba(0, 0, 0, 0.07);
-    /* background: var(--white); */
+    padding: 2.2em;
     height: 100%;
 }
 .icon {

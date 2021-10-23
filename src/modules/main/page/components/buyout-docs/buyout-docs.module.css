@@ -13,11 +13,14 @@
 }
 .doc__column {
     flex: 0 1 48%;
-    margin-bottom: 20px;
+    box-shadow: 0 0.9em 1.1em rgba(0, 0, 0, 0.07);
 }
 
 @media (max-width: 700px) {
     .doc__column {
         flex: 0 1 100%;
+    }
+    .doc__column :not(:last-child) {
+        margin-bottom: 20px;
     }
 } 
