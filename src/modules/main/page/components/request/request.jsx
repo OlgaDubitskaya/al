@@ -31,7 +31,6 @@ export const ModalRequest = () => {
             method: "POST",
             body: formData
         })
-        console.log("res", res)
         setIsSpin(false)
         if (!res.errors) {
             success()

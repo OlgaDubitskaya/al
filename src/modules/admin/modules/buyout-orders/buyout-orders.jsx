@@ -15,7 +15,6 @@ export const BuyoutOrders = () => {
                 url: "/api/admin/order/buyoutorders?page=1&size=25",
                 method: "GET"
             })
-            console.log("res", res)
             setOrders(res.orders)
         } catch (e) {
             error()

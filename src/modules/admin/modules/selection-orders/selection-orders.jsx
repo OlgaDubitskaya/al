@@ -13,7 +13,6 @@ export const SelectionOrders = () => {
                 url: "/api/admin/order/selectionorders?page=1&size=25",
                 method: "GET"
             })
-            console.log("res", res)
             setOrders(res.orders)
         } catch (e) {
             error()

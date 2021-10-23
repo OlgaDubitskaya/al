@@ -12,7 +12,6 @@ export const Login = () => {
     const dispatch = useDispatch()
 
     const handlerClick = async () => {
-        console.log("userName", userName, "password", password)
         const res = await fetchApi({
             url: "/api/admin/user/login",
             method: "POST",

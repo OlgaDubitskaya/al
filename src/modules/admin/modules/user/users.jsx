@@ -69,7 +69,6 @@ export const Users = () => {
                 url: "/api/admin/users",
                 method: "GET"
             })
-            console.log("res", res)
             setUsers(res.users)
         } catch (e) {
             error()
