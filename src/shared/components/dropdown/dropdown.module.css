@@ -1,0 +1,47 @@
+.item {
+    width: 70%;
+    margin: 5px auto;
+}
+.button {
+    display: flex;
+    justify-content: space-between;    
+    font-size: 1rem;
+    background-color: var(--gray);
+    border: 1px solid var(--gray);
+    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    padding: 1em;
+    color: var(--yellow);
+    /* margin: 10px 0; */
+    width: 100%;
+    font-weight: 700;
+}
+@media (max-width: 1200px) {
+    .item {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .item {
+        width: 100%;
+    }
+}
+.text {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.button > div {
+    flex: 1 1 80%;
+    text-align: start;
+}
+.button > img {
+    font-size: 0.8rem;
+}
+.subtitle {
+    color: var(--dark-gray);
+    font-size: 1rem;
+    line-height: 1.42em;
+}

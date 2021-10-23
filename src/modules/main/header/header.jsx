@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { MenuOutlined } from '@ant-design/icons'
-import { scroll } from "../../../shared"
+import { scroll } from "../../../shared/functions"
+import { InputPhone } from "../../../shared/components"
+import { phones } from "../../../shared/constants"
 import styles from "./header.module.css"
 
 const links = [
@@ -47,20 +49,16 @@ export const Header = () => {
                         {links.map(l => (
                             <li className={styles.menu__item} key={l.title}>
                                 <button className={styles.menu__link} onClick={() => scroll(l.link)}>{l.title}</button>
-                                {/* <a href="" className={styles.menu__link}>{l.title}</a> */}
                             </li>
                         ))}
                     </ul>
                 </nav>
                 <div className={styles.block}>
-                    <div>
-                        <img src="/images/content/phone-operators/mts.png" alt="MTS" />
-                        <a href="tel:+375 (29) 243-243-5">+375 (29) 243-243-5</a>
-                        </div>
-                    <div>
-                        <img src="/images/content/phone-operators/A1.jpg" alt="A1" />
-                        <a href="tel:+375 (29) 906-70-70">+375 (29) 906-70-70</a>
-                    </div>
+                    {
+                        phones.map(i => (
+                            <InputPhone item={i} />
+                        ))
+                    }
                 </div>
                 <div className={styles.header__dropdown_menu}>
                     <button

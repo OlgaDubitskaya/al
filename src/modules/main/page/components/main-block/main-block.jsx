@@ -26,9 +26,6 @@ export const MainBlock = () => {
                         >
                             Оставить заявку
                         </button>
-                        {/* <a href="" className={`${styles.main_block__button} ${styles.main_block__button_border}`}>
-                            Learn More
-                        </a> */}
                     </div>
                 </div>
             </div>

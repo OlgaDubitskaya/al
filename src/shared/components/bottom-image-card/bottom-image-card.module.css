@@ -1,0 +1,20 @@
+.body {
+    font-size: 1rem;
+    margin: 2.5em 2em;
+}
+.title {
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.33em;
+    margin-bottom: 10px;
+}
+.text {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.42em;
+}
+.picture img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

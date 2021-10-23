@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Modal, Spin } from 'antd'
 import { setBuyoutApplicationVisible } from "../../../ducks"
 import { Buyout, Inspection } from "./forms"
-import { fetchApi, success, error } from "../../../../../shared"
+import { fetchApi, success, error } from "../../../../../shared/functions"
 import styles from "./request.module.css"
 
 const initialState = {

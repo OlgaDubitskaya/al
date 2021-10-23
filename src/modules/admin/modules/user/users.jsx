@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Button, Modal, Input, Space, Table } from "antd"
 // eslint-disable-next-line no-unused-vars
 import { EyeInvisibleOutlined, EyeTwoTone, UserOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons'
-import { fetchApi, success, error, warning } from "../../../../shared"
+import { fetchApi, success, error, warning } from "../../../../shared/functions"
 // import { setAuthorized } from "../../ducks"
 // import { useDispatch } from "react-redux"
 

@@ -1,0 +1,12 @@
+.block {
+    letter-spacing: .2px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.block_title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0.3em 0;
+    font-weight: 700;
+}

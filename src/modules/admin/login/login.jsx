@@ -3,7 +3,7 @@ import { Input, Space, Button } from 'antd'
 import { EyeInvisibleOutlined, EyeTwoTone, UserOutlined } from '@ant-design/icons'
 import { useDispatch } from "react-redux"
 import { setAuthorized } from "../ducks"
-import { fetchApi } from "../../../shared"
+import { fetchApi } from "../../../shared/functions"
 import styles from "./login.module.css"
 
 export const Login = () => {

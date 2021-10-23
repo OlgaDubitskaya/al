@@ -6,7 +6,6 @@
     top: 0;
     font-size: 1rem;
 }
-
 .header__fixed {
     background-color: var(--gray);
     position: fixed;
@@ -49,8 +48,6 @@
 .menu__item:not(:last-child) {
     margin-right: 15px;
 }
-
-
 .menu__link {
     font-size: 1.2rem;
     color: var(--light-gray);
@@ -70,30 +67,15 @@ img {
 .block {
     grid-area: phoneNumbers;
 }
-.block > div {
-    display: flex;
-    align-items: center;
-}
-.block  img {
-    height: 20px;
-    width: 20px;
-    border-radius: 3px;
-}
-
 .block a {
     color: var(--white);
-    direction: none;
 }
-.block a:hover {
-    color: var(--yellow);
-}
-.block > div:not(:last-child){
+.block :not(:last-child){
     margin-bottom: 5px;
 }
 @media (max-width: 1080px) {
     .header__container {
         grid-template-areas: "navs phoneNumbers";
-        /* align-items: center; */
     }
     .header__logo {
         display: none;
@@ -108,7 +90,6 @@ img {
     }
     .block {
         justify-self: start;
-        
     }
     .header__container {
         grid-template-areas: "phoneNumbers selectionButton dropdownMenu";
@@ -154,7 +135,6 @@ img {
         margin: 0 20px;
         font-size: 1.1rem;
         text-align: end;
-        /* padding: 0; */
     }
     .dropdown_block {
         display: block;

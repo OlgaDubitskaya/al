@@ -1,0 +1,23 @@
+.body {
+    padding: 2.2em;
+    font-size: 1rem;
+    box-shadow: 0 0.9em 1.1em rgba(0, 0, 0, 0.07);
+    /* background: var(--white); */
+    height: 100%;
+}
+.icon {
+    margin-bottom: 15px;
+}
+.icon > img path {
+    fill: var(--green);
+}
+.title {
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.33em;
+}
+.text {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.42em;
+}

@@ -3,7 +3,7 @@ import { Login } from "./login"
 import { Modules } from "./modules"
 import { useSelector, useDispatch } from "react-redux"
 import { setAuthorized } from "./ducks"
-import { fetchApi } from "../../shared"
+import { fetchApi } from "../../shared/functions"
 // import styles from "./admin.module.css"
 
 export const Admin = () => {

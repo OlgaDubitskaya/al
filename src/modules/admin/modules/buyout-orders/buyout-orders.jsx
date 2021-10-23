@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { fetchApi, success, error, warning } from "../../../../shared"
+import { fetchApi, success, error, warning } from "../../../../shared/functions"
 import { Table, Image, Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 // import styles from "./buyout-orders.module.css"

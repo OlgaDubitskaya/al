@@ -1,0 +1,14 @@
+.block {
+    display: flex;
+}
+.block > div {
+    display: flex;
+    align-items: center;
+}
+.block a {
+    direction: none;
+}
+.block a:hover {
+    color: var(--yellow);
+}
+

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Dropdown, BlockTitle } from "../../../../../shared/components"
 import styles from "./selection.module.css"
 
 const list = [
@@ -65,32 +66,23 @@ export const Selection = () => {
     return (
         <div className={styles.page_selection} id="selection">
             <div className={`${styles.selection__container} _container`}>
-                <div className={`${styles.selection__header} ${styles.header_block}`}>
-                    <h2 className={styles.header_block__title}>Подбор авто</h2>
+                <BlockTitle text="Подбор авто">
                     <div className={styles.service}>
                         <div className={styles.service__item}>Разовый осмотр</div>
-                        <div className={styles.service__price}>60 р.</div>
+                        <div className={styles.service__price}>70 р.</div>
                     </div>
                     <div className={styles.description}>Осмотр автомобиля нашими экспертами даёт понять в каком техническом и косметическом состоянии находится автомобиль. И стоит ли за указанную цену рассматривать его к покупке.</div>
-                </div>
+                </BlockTitle>
                 <div className={styles.selection__body}>
                     {list.map(i => (
-                        <div className={styles.selection__item} key={i.id}>
-                            <button
-                                type="button"
-                                className={styles.selection__button}
-                                onClick={() => setSubtitleVisible({ ...subtitleVisible, [i.id]: !subtitleVisible[i.id] })}
-                            >
-                                <div className={styles.selection__text}>{i.title}</div>
-                                {i.subtitle && (
-                                    <img src={subtitleVisible[i.id] ? "/images/content/dropdown/minus.svg" : "/images/content/dropdown/plus.svg"} alt="plus/minus" />
-                                )}
-                            </button>
-                            {subtitleVisible[i.id] && <div className={styles.subtitle}>{i.subtitle}</div>}
-                        </div>
+                        <Dropdown
+                            item={i}
+                            setVisible={setSubtitleVisible}
+                            visible={subtitleVisible}
+                        />
                     ))}
                 </div>
-                <div className={styles.note}>При необходимости выезда за пределы г.Бреста дополнительно оплачиваются расходы из расчета 20 копеек за 1км пройденного пути.</div>
+                <div className={styles.note}>При необходимости выезда за пределы г.Бреста цена на осмотр согласовывается.</div>
             </div>
         </div>
     )
