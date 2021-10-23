@@ -2,8 +2,6 @@
     margin-top: -90px;
     margin-bottom: 70px;
 }
-.steps {
-}
 .steps__container {
     position: relative;
     z-index: 2;
@@ -30,12 +28,3 @@
         flex: 0 1 100%;
     }
 } 
-.item_step {
-}
-.item_step__green {
-    background-color: var(--green);
-    color: var(--white);
-}
-.item_step__green > .item_step__text {
-    color: var(--light-gray);
-}

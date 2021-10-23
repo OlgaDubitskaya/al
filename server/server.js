@@ -35,4 +35,4 @@ app.use(express.static(path.join(__dirname, "/../build")))
 app.get("*", (req, res) => {
 	res.sendFile(path.join(`${__dirname}/../build/index.html`))
 })
-const server = app.listen()
+const server = process.env.NODE_PORT ? app.listen(process.env.NODE_PORT) : app.listen()
