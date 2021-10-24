@@ -8,24 +8,26 @@ export const MainBlock = () => {
 
     return (
         <div className={styles.main_block} id="main">
-            <div className={`${styles.main_block__container} _container`}>
-                <div className={styles.main_block_body}>
-                    <h1 className={styles.main_block__title}>Купим ваш авто</h1>
-                    <div className={styles.main_block__text}>
-                        Быстрый выкуп автомобилей в любом состоянии, онлайн оценка на сайте, работаем по всей РБ
-                    </div>
-                    <h3 className={styles.main_block__second_title}>Подбор авто</h3>
-                    <div className={styles.main_block__text}>
-                        Комплексная диагностика выбранного Вами автомобиля
-                    </div>
-                    <div className={styles.main_block__buttons}>
-                        <button
-                            type="button"
-                            className={`${styles.main_block__button} ${styles.main_block__button_orange}`}
-                            onClick={() => dispatch(setBuyoutApplicationVisible(true))}
-                        >
-                            Оставить заявку
-                        </button>
+            <div className={styles.main_block__container}>
+                <div className="_container">
+                    <div className={styles.main_block_body}>
+                        <h1 className={styles.main_block__title}>Купим ваш авто</h1>
+                        <div className={styles.main_block__text}>
+                            Быстрый выкуп автомобилей в любом состоянии, онлайн оценка на сайте, работаем по всей РБ
+                        </div>
+                        <h3 className={styles.main_block__second_title}>Подбор авто</h3>
+                        <div className={styles.main_block__text}>
+                            Комплексная диагностика выбранного Вами автомобиля
+                        </div>
+                        <div className={styles.main_block__buttons}>
+                            <button
+                                type="button"
+                                className={`${styles.main_block__button} ${styles.main_block__button_orange}`}
+                                onClick={() => dispatch(setBuyoutApplicationVisible(true))}
+                            >
+                                Оставить заявку
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
