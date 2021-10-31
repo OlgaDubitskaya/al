@@ -34,6 +34,57 @@ export const BuyoutOrders = () => {
             warning()
         }
     }
+
+    const expandedRowRender = (props) => {
+        const columns = [
+            { title: 'Параметер', dataIndex: 'parameter', key: 'parameter' },
+            { title: 'Значение', dataIndex: 'value', key: 'value' }
+        ];
+        const data = Object.entries(props).reduce((arr, cur) => {
+            const [key, value] = cur
+            switch (key) {
+                case "autoName":
+                    arr.push({
+                        parameter: "Наименование авто",
+                        value: value,
+                        key: "autoName"
+                    })
+                    break
+                case "year":
+                    arr.push({
+                        parameter: "Год выпуска",
+                        value: value,
+                        key: "year"
+                    })
+                    break
+                case "mileage":
+                    arr.push({
+                        parameter: "Пробег",
+                        value: value,
+                        key: "mileage"
+                    })
+                    break
+                case "cost":
+                    arr.push({
+                        parameter: "Цена",
+                        value: value,
+                        key: "cost"
+                    })
+                    break
+                case "description":
+                    arr.push({
+                        parameter: "Описание",
+                        value: value,
+                        key: "description"
+                    })
+                    break
+                default:
+                    break
+            }
+            return arr
+        }, [])
+        return <Table columns={columns} dataSource={data} pagination={false}/>;
+    };
     const columns = [
         {
             title: 'Имя',
@@ -44,31 +95,6 @@ export const BuyoutOrders = () => {
             title: 'Номер телефона',
             dataIndex: 'phoneNumber',
             key: 'phoneNumber'
-        },
-        {
-            title: 'Наименование авто',
-            dataIndex: 'autoName',
-            key: 'autoName'
-        },
-        {
-            title: 'Год выпуска',
-            dataIndex: 'year',
-            key: 'year'
-        },
-        {
-            title: 'Пробег',
-            dataIndex: 'mileage',
-            key: 'mileage'
-        },
-        {
-            title: 'Цена',
-            dataIndex: 'cost',
-            key: 'cost'
-        },
-        {
-            title: 'Описание',
-            dataIndex: 'description',
-            key: 'description'
         },
         {
             title: 'Дата',
@@ -116,8 +142,9 @@ export const BuyoutOrders = () => {
     }, [])
 
     return (
-        <div>
-            <Table columns={columns} dataSource={orders} />
+        <>
+            <Table columns={columns} dataSource={orders} expandable={{ expandedRowRender }} />
+
             <div style={{ display: 'none' }}>
                 <Image.PreviewGroup preview={{ visible, onVisibleChange: vis => setVisible(vis) }}>
                     {photoCarousel.map(img => (
@@ -125,6 +152,6 @@ export const BuyoutOrders = () => {
                     ))}
                 </Image.PreviewGroup>
             </div>
-        </div>
+        </>
     )
 }

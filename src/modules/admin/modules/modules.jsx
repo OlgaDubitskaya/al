@@ -22,7 +22,8 @@ export const Modules = () => {
     }
 
     return (
-        <div class={styles.container}>
+        <div className={styles.container}>
+            <Button onClick={logOut}>Log out</Button>
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Выкуп авто" key="buyoutorders">
                     <BuyoutOrders />
@@ -34,7 +35,7 @@ export const Modules = () => {
                     <Users />
                 </TabPane>
             </Tabs>
-            <Button onClick={logOut}>Log out</Button>
+            
         </div>
     )
 }

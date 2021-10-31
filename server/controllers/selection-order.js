@@ -44,7 +44,6 @@ const getSelectionOrders = async (req, res) => {
                 key: i._id,
                 userName: i.userName,
                 phoneNumber: i.phoneNumber,
-                purpose: i.purpose,
                 date: i.date
             }
         })

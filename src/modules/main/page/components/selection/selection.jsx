@@ -64,7 +64,7 @@ export const Selection = () => {
     })
 
     return (
-        <div className={styles.page_selection} id="selection">
+        <section className={styles.page_selection} id="selection">
             <div className={`${styles.selection__container} _container`}>
                 <BlockTitle text="Подбор авто">
                     <div className={styles.service}>
@@ -85,6 +85,6 @@ export const Selection = () => {
                 </div>
                 <div className={styles.note}>При необходимости выезда за пределы г.Бреста цена на осмотр согласовывается.</div>
             </div>
-        </div>
+        </section>
     )
 }

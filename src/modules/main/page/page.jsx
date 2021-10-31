@@ -18,12 +18,12 @@ export const Page = () => {
         <div className={styles.page} >
             <MainBlock />
             <BuyoutSteps />
-            <ModalRequest />
             <BuyoutTransport />
             <BuyoutConditions />
             <BuyoutDocs />
             <Selection />
             <Questions />
+            <ModalRequest />
         </div>
     )
 }

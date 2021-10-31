@@ -47,34 +47,32 @@ export const ModalRequest = () => {
 
     const changeFormData = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
     return (
-        <div>
-            <Modal 
-                title="" 
-                visible={buyoutApplicationVisible}
-                onCancel={handleCancel} 
-                footer={[
-                    <button className={`${styles.button} ${styles.okButton}`} onClick={handleOk} key="okButton">Оформить заявку</button>,
-                    <button className={`${styles.button} ${styles.closeButton}`} onClick={handleCancel} key="closeButton">Закрыть</button>
-                ]}
-            >
-                <ul className={styles.tab}>
-                    <li className={activeTab === "buyout" ? styles.active : ""} onClick={() => setActiveTab("buyout")}>Заявка на выкуп</li>
-                    <li className={activeTab === "inspection" ? styles.active : ""} onClick={() => setActiveTab("inspection")}>Подбор авто</li>
-                </ul>
-                {isSpin && <Spin />}
-                {activeTab === "buyout" ? (
-                    <Buyout
-                        formData={formData}
-                        setFormData={setFormData}
-                        changeFormData={changeFormData}
-                    />
-                ) : (
-                    <Inspection
-                        formData={formData}
-                        changeFormData={changeFormData}
-                    />
-                )}
-            </Modal>
-        </div>
+        <Modal
+            title=""
+            visible={buyoutApplicationVisible}
+            onCancel={handleCancel}
+            footer={[
+                <button className={`${styles.button} ${styles.okButton}`} onClick={handleOk} key="okButton">Оформить заявку</button>,
+                <button className={`${styles.button} ${styles.closeButton}`} onClick={handleCancel} key="closeButton">Закрыть</button>
+            ]}
+        >
+            <ul className={styles.tab}>
+                <li className={activeTab === "buyout" ? styles.active : ""} onClick={() => setActiveTab("buyout")}>Заявка на выкуп</li>
+                <li className={activeTab === "inspection" ? styles.active : ""} onClick={() => setActiveTab("inspection")}>Подбор авто</li>
+            </ul>
+            {isSpin && <Spin />}
+            {activeTab === "buyout" ? (
+                <Buyout
+                    formData={formData}
+                    setFormData={setFormData}
+                    changeFormData={changeFormData}
+                />
+            ) : (
+                <Inspection
+                    formData={formData}
+                    changeFormData={changeFormData}
+                />
+            )}
+        </Modal>
     )
 }

@@ -92,7 +92,7 @@ img {
         justify-self: start;
     }
     .header__container {
-        grid-template-areas: "phoneNumbers selectionButton dropdownMenu";
+        grid-template-areas: "phoneNumbers dropdownMenu";
         align-items: center;
     }
     .header__dropdown_menu {

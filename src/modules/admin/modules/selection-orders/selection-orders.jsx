@@ -44,11 +44,6 @@ export const SelectionOrders = () => {
             key: 'phoneNumber'
         },
         {
-            title: 'Цель',
-            dataIndex: 'purpose',
-            key: 'purpose'
-        },
-        {
             title: 'Дата',
             dataIndex: 'date',
             key: 'date'

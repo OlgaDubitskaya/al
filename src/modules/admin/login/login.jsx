@@ -21,7 +21,7 @@ export const Login = () => {
     }
 
     return (
-        <div class={styles.container}>
+        <div className={styles.container}>
             <div>
                 <Space direction="vertical">
                     <Input
