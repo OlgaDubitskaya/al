@@ -4,6 +4,17 @@ import { Table, Image, Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 // import styles from "./buyout-orders.module.css"
 
+const buyoutKeys = {
+    marka: "Марка",
+    model: "Модель",
+    year: "Год выпуска",
+    engine: "Двигатель",
+    volume: "Объем двигателя",
+    transmission: "Коробка передач",
+    mileage: "Пробег",
+    cost: "Цена",
+    description: "Описание"
+}
 
 export const BuyoutOrders = () => {
     const [orders, setOrders] = useState([])
@@ -42,44 +53,12 @@ export const BuyoutOrders = () => {
         ];
         const data = Object.entries(props).reduce((arr, cur) => {
             const [key, value] = cur
-            switch (key) {
-                case "autoName":
-                    arr.push({
-                        parameter: "Наименование авто",
-                        value: value,
-                        key: "autoName"
-                    })
-                    break
-                case "year":
-                    arr.push({
-                        parameter: "Год выпуска",
-                        value: value,
-                        key: "year"
-                    })
-                    break
-                case "mileage":
-                    arr.push({
-                        parameter: "Пробег",
-                        value: value,
-                        key: "mileage"
-                    })
-                    break
-                case "cost":
-                    arr.push({
-                        parameter: "Цена",
-                        value: value,
-                        key: "cost"
-                    })
-                    break
-                case "description":
-                    arr.push({
-                        parameter: "Описание",
-                        value: value,
-                        key: "description"
-                    })
-                    break
-                default:
-                    break
+            if (buyoutKeys[key]) {
+                arr.push({
+                    parameter: buyoutKeys[key],
+                    value,
+                    key
+                })
             }
             return arr
         }, [])

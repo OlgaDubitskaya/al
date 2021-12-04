@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Modal, Spin } from 'antd'
 import { setBuyoutApplicationVisible } from "../../../ducks"
@@ -9,11 +9,26 @@ import styles from "./request.module.css"
 const initialState = {
     userName: "",
     phoneNumber: "",
-    autoName: "",
+    model: "",
+    marka: "",
+    engine: "diesel",
+    volume: "",
+    transmission: "automat",
     year: "",
     mileage: "",
     cost: "",
+    description: "",
     images: []
+}
+
+const checkNumber = number => {
+    const cleanedNumber = number.replaceAll("+", "")
+                                .replaceAll(" ", "")
+                                .replaceAll("-", "")
+                                .replaceAll("_", "")
+                                .replaceAll("(", "")
+                                .replaceAll(")", "")
+    return cleanedNumber.length
 }
 
 export const ModalRequest = () => {
@@ -22,8 +37,31 @@ export const ModalRequest = () => {
     const [formData, setFormData] = useState(initialState)
     const [isSpin, setIsSpin] = useState(false)
     const [activeTab, setActiveTab] = useState("buyout")
+    const [errorName, setErrorName] = useState(false)
+    const [errorPhone, setErrorPhone] = useState(false)
+
+    const clearTab = () => {
+        setFormData(initialState)
+        setErrorName(false)
+        setErrorPhone(false)
+    }
+
+    useEffect(() => {
+        clearTab()
+    }, [activeTab])
 
     const handleOk = async () => {
+        if (!formData.userName.length && checkNumber(formData.phoneNumber) < 12) {
+            setErrorName(true)
+            setErrorPhone(true)
+            return
+        } else if (!formData.userName.length) {
+            setErrorName(true)
+            return
+        } else if (checkNumber(formData.phoneNumber) < 12) {
+            setErrorPhone(true)
+            return
+        }
         setIsSpin(true)
         const url = activeTab === "buyout" ? "/api/order/buyout/create" : "/api/order/selection/create"
         const res = await fetchApi({
@@ -41,11 +79,15 @@ export const ModalRequest = () => {
     }
 
     const handleCancel = () => {
-        setFormData(initialState)
+        clearTab()
         dispatch(setBuyoutApplicationVisible(false))
     }
 
-    const changeFormData = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
+    const changeFormData = (e) => {
+        if (errorName && e.target.name === "userName" && e.target.value.length) setErrorName(false)
+        if (errorPhone && e.target.name === "phoneNumber" && checkNumber(e.target.value) >= 12) setErrorPhone(false)  
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
     return (
         <Modal
             title=""
@@ -66,11 +108,15 @@ export const ModalRequest = () => {
                     formData={formData}
                     setFormData={setFormData}
                     changeFormData={changeFormData}
+                    errorName={errorName}
+                    errorPhone={errorPhone}
                 />
             ) : (
                 <Inspection
                     formData={formData}
                     changeFormData={changeFormData}
+                    errorName={errorName}
+                    errorPhone={errorPhone}
                 />
             )}
         </Modal>

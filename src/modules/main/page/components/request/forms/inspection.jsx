@@ -5,33 +5,39 @@ import styles from "./forms.module.css"
 export const Inspection = props => {
     const {
         formData,
-        changeFormData
+        changeFormData,
+        errorName,
+        errorPhone
     } = props
 
     return (
         <div className={styles.form}>
             <h3 className={styles.title}>Разовый осмотр</h3>
             <div>
-                <label htmlFor="userName">Имя:</label>
+                <label htmlFor="userName">Имя:<span className={styles.required}>*</span></label>
                 <input
                     type="text"
                     name="userName"
                     id="userName"
                     value={formData.userName}
+                    className={errorName ? styles.input_error : ""}
                     onChange={(e) => changeFormData(e)}
                 />
             </div>
+            {errorName && <div className={styles.error}>Поле "Имя" обязательно для заполнения</div>}
             <div>
-                <label htmlFor="phoneNumber">Номер телефона:</label>
+                <label htmlFor="phoneNumber">Номер телефона:<span className={styles.required}>*</span></label>
                 <NumberFormat
                     format="+375 (##) ###-##-##"
                     mask="_"
                     name="phoneNumber"
                     id="phoneNumber"
-                    allowEmptyFormatting 
+                    allowEmptyFormatting
+                    className={errorPhone ? styles.input_error : ""} 
                     onChange={(e) => changeFormData(e)}
                 />
             </div>
+            {errorPhone && <div className={styles.error}>Поле "Номер телефона" заполнено некорректно</div>}
         </div>
     )
 }

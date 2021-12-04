@@ -18,66 +18,42 @@ const BuyoutOrder = new mongoose.Schema({
     },
     autoName: {
         type: String,
-        required: true,
-        minlength: 1,
         trim: true
+    },
+    model: {
+        type: String,
+        trim: true
+    },
+    marka: {
+        type: String,
+        trim: true
+    },
+    engine: {
+        type: String,
+        default: "diesel"
+    },
+    volume: {
+        type: String,
+        trim: true
+    },
+    transmission: {
+        type: String,
+        default: "automat"
     },
     year: {
         type: String,
-        required: true,
-        minlength: 1,
         trim: true
     },
     mileage: {
         type: String,
-        required: true,
-        minlength: 1,
         trim: true
     },
     cost: {
         type: String,
-        required: true,
-        minlength: 1,
         trim: true
     },
     description: {
         type: String
-    },
-    airConditioning: {
-        type: Boolean,
-        default: false
-    },
-    leatherInterior: {
-        type: Boolean,
-        default: false
-    },
-    alloyWheels: {
-        type: Boolean,
-        default: false
-    },
-    xenon: {
-        type: Boolean,
-        default: false
-    },
-    speakerphone: {
-        type: Boolean,
-        default: false
-    },
-    parktronic: {
-        type: Boolean,
-        default: false
-    },
-    heatedSeats: {
-        type: Boolean,
-        default: false
-    },
-    stabilityControlSystem: {
-        type: Boolean,
-        default: false
-    },
-    navigation: {
-        type: Boolean,
-        default: false
     },
     images: {
         type: Array,

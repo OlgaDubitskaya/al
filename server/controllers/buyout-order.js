@@ -6,15 +6,7 @@ const { sendToTelegram } = require("../utils")
 
 const createBuyoutOrder = async (req, res) => {
     try {
-        const {
-            userName,
-            phoneNumber,
-            autoName,
-            year,
-            mileage,
-            cost,
-            images
-        } = req.body
+        const { userName, phoneNumber, images } = req.body
 
         const imagesPath = []
         images.forEach(i => {
@@ -33,20 +25,13 @@ const createBuyoutOrder = async (req, res) => {
         })
 
         const order = new BuyoutOrder({
-            userName,
-            phoneNumber,
-            autoName,
-            year,
-            mileage,
-            cost,
+            ...req.body,
             images: imagesPath
         })
         await order.save()
         const sending = await sendToTelegram(`${userName}, ${phoneNumber}, Выкуп авто`)
-        console.log("sending", sending)
         return res.status(200).json({ massage: "Successfully" })
     } catch (error) {
-        console.log("error", error)
         return res.status(500).json(error)
     }
 }
@@ -54,11 +39,9 @@ const deleteBuyoutOrder = async (req, res) => {
     try {
         
         const { id } = req.body
-        console.log("req.body", id)
         await BuyoutOrder.deleteOne({ _id: id })
         return res.status(200).json({ massage: "Successfully" })
     } catch (error) {
-        console.log("error", error)
         return res.status(500).json(error)
     }
 }
@@ -69,18 +52,22 @@ const getBuyoutOrders = async (req, res) => {
         // const response = await BuyoutOrder.find().skip(toSkip).limit(size)
         const response = await BuyoutOrder.find().sort({ date: -1 })
 
-        console.log("res", response)
         const orders = response.map(i => {
             return {
                 key: i._id,
                 userName: i.userName,
                 phoneNumber: i.phoneNumber,
-                autoName: i.autoName,
+                marka: i.marka,
+                model: i.model,
+                engine: i.engine,
+                volume: i.volume,
+                transmission: i.transmission,
                 year: i.year,
                 mileage: i.mileage,
                 cost: i.cost,
                 images: i.images,
-                date: i.date
+                date: i.date,
+                description: i.description
             }
         })
 

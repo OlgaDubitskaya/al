@@ -12,7 +12,8 @@ html {
     --white: #FFFFFF;
     --orange: #FF7B47;
     --yellow: #e9db21;
-
+    --error: #FF4500;
+    
     height: 100%;
 } 
 body {
