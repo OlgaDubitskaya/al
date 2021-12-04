@@ -16,7 +16,7 @@ export const phones = [
 ]
 export const socials = [
     {
-        href: "https://vk.com/widget_community.php?act=a_subscribe_box&amp;oid=-188297581&amp;state=1",
+        href: "https://vk.com/avto_vikup_by",
         img: {
             src: "socials/vk.png",
             alt: "VK"
