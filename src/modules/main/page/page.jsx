@@ -21,8 +21,8 @@ export const Page = () => {
             <BuyoutTransport />
             <BuyoutConditions />
             <BuyoutDocs />
-            <Selection />
             <Questions />
+            <Selection />
             <ModalRequest />
         </div>
     )
