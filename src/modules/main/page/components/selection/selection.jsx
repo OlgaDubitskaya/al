@@ -69,7 +69,7 @@ export const Selection = () => {
                 <BlockTitle text="Подбор авто">
                     <div className={styles.service}>
                         <div className={styles.service__item}>Разовый осмотр</div>
-                        <div className={styles.service__price}>70 р.</div>
+                        <div className={styles.service__price}>100 р.</div>
                     </div>
                     <div className={styles.description}>Осмотр автомобиля нашими экспертами даёт понять в каком техническом и косметическом состоянии находится автомобиль. И стоит ли за указанную цену рассматривать его к покупке.</div>
                 </BlockTitle>
