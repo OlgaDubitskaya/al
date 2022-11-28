@@ -8,7 +8,6 @@ import {
     BuyoutSteps,
     BuyoutDocs,
     Questions,
-    Selection,
     ModalRequest
 } from "./components"
 
@@ -22,7 +21,6 @@ export const Page = () => {
             <BuyoutConditions />
             <BuyoutDocs />
             <Questions />
-            <Selection />
             <ModalRequest />
         </div>
     )

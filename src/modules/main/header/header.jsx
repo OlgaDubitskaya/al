@@ -12,11 +12,7 @@ const links = [
     },
     {
         link: "docs",
-        title: "Необходиые документы"
-    },
-    {
-        link: "selection",
-        title: "Подбор авто"
+        title: "Необходимые документы"
     },
     {
         link: "questions",
