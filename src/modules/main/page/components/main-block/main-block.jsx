@@ -15,10 +15,10 @@ export const MainBlock = () => {
                         <div className={styles.main_block__text}>
                             Быстрый выкуп автомобилей в любом состоянии, онлайн оценка на сайте, работаем по всей РБ
                         </div>
-                        <h3 className={styles.main_block__second_title}>Подбор авто</h3>
-                        <div className={styles.main_block__text}>
+                        {/* <h3 className={styles.main_block__second_title}>Подбор авто</h3> */}
+                        {/* <div className={styles.main_block__text}>
                             Комплексная диагностика выбранного Вами автомобиля
-                        </div>
+                        </div> */}
                         <div className={styles.main_block__buttons}>
                             <button
                                 type="button"

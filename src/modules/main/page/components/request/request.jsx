@@ -100,7 +100,7 @@ export const ModalRequest = () => {
         >
             <ul className={styles.tab}>
                 <li className={activeTab === "buyout" ? styles.active : ""} onClick={() => setActiveTab("buyout")}>Заявка на выкуп</li>
-                <li className={activeTab === "inspection" ? styles.active : ""} onClick={() => setActiveTab("inspection")}>Подбор авто</li>
+                {/* <li className={activeTab === "inspection" ? styles.active : ""} onClick={() => setActiveTab("inspection")}>Подбор авто</li> */}
             </ul>
             {isSpin && <Spin />}
             {activeTab === "buyout" ? (
