@@ -18,7 +18,6 @@ const initialState = {
     mileage: "",
     cost: "",
     description: "",
-    images: []
 }
 
 const checkNumber = number => {
@@ -39,7 +38,7 @@ export const ModalRequest = () => {
     const [activeTab, setActiveTab] = useState("buyout")
     const [errorName, setErrorName] = useState(false)
     const [errorPhone, setErrorPhone] = useState(false)
-
+    
     const clearTab = () => {
         setFormData(initialState)
         setErrorName(false)

@@ -1,6 +1,4 @@
 import React from "react"
-import { Upload } from 'antd'
-import { UploadOutlined } from "@ant-design/icons"
 import { Checkbox } from "../../../../../../shared/components"
 import NumberFormat from 'react-number-format'
 import styles from "./forms.module.css"
@@ -132,23 +130,6 @@ export const Buyout = props => {
                     cols="200"
                     onChange={(e) => changeFormData(e)}
                 >{formData.description}</textarea>
-            </div>
-            <div>
-                <Upload
-                    name="User Defined"
-                    listType="picture"
-                    beforeUpload={() => false}
-                    fileList={formData.images}
-                    className="upload-list-inline"
-                    onChange={async info => {
-                        setFormData({ ...formData, images: info.fileList })
-                    }}
-                    accept="image/jpeg, image/png"
-                    maxCount={5}
-                    multiple
-                >
-                    <span className={styles.upload}><UploadOutlined /> Загрузить фото</span>
-                </Upload>
             </div>
         </div>
     )

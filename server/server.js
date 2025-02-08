@@ -2,21 +2,10 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const path = require("path")
 const cors = require("cors")
-const http = require("http")
 const dotenv = require("dotenv")
-const mongoose = require('mongoose')
 const cookieParser = require("cookie-parser");
 
 dotenv.config({ path: ".env" })
-
-const { DB_URI } = process.env
-
-mongoose
-  .connect(DB_URI)
-  .then(
-    () => console.log("Connected to mongoDB"),
-    err => console.log("Error connecting to mongoDB", err)
-  )
 
 const app = express()
 app.use(cookieParser())
@@ -28,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors())
 
 // routes
-app.use("/api/admin", require("./routes/admin"))
+// app.use("/api/admin", require("./routes/admin"))
 app.use("/api", require("./routes/api"))
 
 app.use(express.static(path.join(__dirname, "/../build")))
